@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Route Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Make the Google Maps API load promise available globally
+      // This prevents multiple loads if components re-render
+      if (!window.googleMapsApiLoaded) {
+        window.googleMapsApiLoaded = new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          // IMPORTANT: Replace YOUR_GOOGLE_MAPS_API_KEY with your actual API key
+          script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&loading=async`;
+          script.async = true;
+          script.defer = true;
+          script.onload = () => resolve(window.google);
+          script.onerror = () => reject(new Error('Google Maps script failed to load.'));
+          document.head.appendChild(script);
+        });
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

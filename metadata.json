@@ -1,0 +1,5 @@
+{
+  "name": "Bus Route Finder",
+  "description": "A sophisticated, fully client-side Bus Ticket Booking web application that simulates a complete booking system for routes between major Indian cities. It features advanced data structures, Google Maps integration for route visualization, and an AI-powered route finder using Gemini.",
+  "requestFramePermissions": []
+}
